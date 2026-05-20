@@ -144,22 +144,22 @@ body {
   --hsw-accent-hover: #2567c9;
   --hsw-accent-soft: rgba(69, 128, 225, 0.12);
   --hsw-accent-softer: rgba(69, 128, 225, 0.07);
-  --hsw-chrome-bg: #faf9f5;
+  --hsw-chrome-bg: #ffffff;
   --hsw-chrome-line: rgba(0, 0, 0, 0.045);
   --hsw-pane-line: rgba(0, 0, 0, 0.032);
-  --hsw-tab-idle-bg: rgba(255, 255, 255, 0.22);
-  --hsw-tab-hover-bg: rgba(255, 255, 255, 0.58);
-  --hsw-tab-active-bg: rgba(255, 253, 250, 0.92);
-  --hsw-table-bg: rgba(255, 253, 248, 0.74);
+  --hsw-tab-idle-bg: rgba(255, 255, 255, 0.72);
+  --hsw-tab-hover-bg: rgba(0, 0, 0, 0.028);
+  --hsw-tab-active-bg: #ffffff;
+  --hsw-table-bg: #ffffff;
   --hsw-table-border: rgba(43, 45, 38, 0.075);
   --hsw-table-header-bg: var(--hsw-table-bg);
   --hsw-table-stripe-bg: transparent;
   --hsw-table-hover-bg: rgba(69, 128, 225, 0.045);
   --hsw-table-code-bg: rgba(38, 38, 34, 0.035);
   --hsw-table-code-border: rgba(38, 38, 34, 0.065);
-  --hsw-page-wash: #fffdf8;
-  --hsw-card-wash: #fffdf8;
-  --hsw-card-tint: linear-gradient(180deg, rgba(69, 128, 225, 0.022), rgba(255, 255, 255, 0));
+  --hsw-page-wash: #ffffff;
+  --hsw-card-wash: #ffffff;
+  --hsw-card-tint: none;
   --hsw-tag-bg: #edf6ff;
   --hsw-tag-text: #2f65b8;
   --hsw-blue: #4580e1;
@@ -168,18 +168,18 @@ body {
   --hsw-red: #b54e47;
   --hsw-purple: #765fa6;
 
-  --background-primary: #fffdf8;
-  --background-primary-alt: #fbfaf6;
-  --background-secondary: #faf9f5;
-  --background-secondary-alt: #f2f0ea;
-  --background-modifier-form-field: #fffdf8;
+  --background-primary: #ffffff;
+  --background-primary-alt: #ffffff;
+  --background-secondary: #ffffff;
+  --background-secondary-alt: #f7f7f7;
+  --background-modifier-form-field: #ffffff;
   --background-modifier-form-field-highlighted: #ffffff;
   --background-modifier-border: rgba(0, 0, 0, 0.075);
   --background-modifier-border-hover: rgba(0, 0, 0, 0.14);
   --background-modifier-border-focus: rgba(0, 0, 0, 0.28);
   --background-modifier-hover: rgba(0, 0, 0, 0.035);
   --background-modifier-active-hover: rgba(0, 0, 0, 0.055);
-  --background-modifier-cover: rgba(248, 247, 242, 0.74);
+  --background-modifier-cover: rgba(255, 255, 255, 0.74);
 
   --text-normal: #1f1f1f;
   --text-muted: #727272;
@@ -191,8 +191,8 @@ body {
   --text-highlight-bg: rgba(255, 236, 184, 0.58);
   --text-highlight-bg-active: rgba(255, 224, 143, 0.62);
 
-  --interactive-normal: #fffdf8;
-  --interactive-hover: #f3f1eb;
+  --interactive-normal: #ffffff;
+  --interactive-hover: #f6f6f6;
   --interactive-accent: var(--hsw-accent);
   --interactive-accent-hover: var(--hsw-accent-hover);
   --interactive-accent-rgb: 69, 128, 225;
@@ -202,7 +202,7 @@ body {
   --titlebar-background: var(--hsw-chrome-bg);
   --titlebar-background-focused: var(--hsw-chrome-bg);
   --ribbon-background: var(--hsw-page-wash);
-  --mobile-sidebar-background: #faf9f5;
+  --mobile-sidebar-background: #ffffff;
 
   --nav-item-color: #838383;
   --nav-item-color-hover: #242424;
@@ -211,7 +211,7 @@ body {
   --nav-item-background-hover: rgba(0, 0, 0, 0.035);
   --nav-item-background-active: rgba(0, 0, 0, 0.055);
 
-  --code-background: #f4f2ed;
+  --code-background: #f7f7f7;
   --code-normal: #2f2f2f;
   --code-comment: #8b8b8b;
   --code-function: #8a5e16;
@@ -1298,9 +1298,7 @@ a.external-link:hover {
   box-sizing: border-box !important;
   border: 1px solid rgba(32, 28, 20, 0.055) !important;
   border-radius: 16px !important;
-  background:
-    var(--hsw-card-tint),
-    var(--hsw-card-wash) !important;
+  background: var(--hsw-card-wash) !important;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.78) inset,
     0 10px 28px rgba(40, 48, 36, 0.025) !important;
