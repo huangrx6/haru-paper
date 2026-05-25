@@ -1197,6 +1197,8 @@ a.external-link:hover {
   border-radius: 5px;
   padding: 0.08em 0.32em;
   font-size: 0.88em;
+  line-height: 1.35;
+  vertical-align: baseline;
 }
 
 .markdown-rendered pre,
@@ -1314,9 +1316,34 @@ a.external-link:hover {
   border-color: var(--hsw-table-code-border);
   border-radius: 6px;
   background: var(--hsw-table-code-bg);
-  padding: 0.08em 0.42em;
+  padding: 0.04em 0.34em;
   font-size: 0.84em;
+  line-height: 1.28;
+  vertical-align: baseline;
   white-space: nowrap;
+}
+
+.markdown-preview-view .search-highlight,
+.markdown-preview-view .search-highlight.mod-active,
+.markdown-preview-view .search-highlight.is-active,
+.markdown-preview-view .is-searching,
+.markdown-preview-view .obsidian-search-match-highlight {
+  display: inline !important;
+  position: static !important;
+  inset: auto !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+  padding: 0 !important;
+  border-radius: 3px !important;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.markdown-preview-view .search-highlight.mod-active,
+.markdown-preview-view .search-highlight.is-active,
+.markdown-preview-view .obsidian-search-match-highlight.mod-active {
+  outline: 2px solid var(--hsw-accent) !important;
+  outline-offset: 1px !important;
 }
 
 .metadata-container,
