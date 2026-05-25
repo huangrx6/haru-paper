@@ -99,6 +99,7 @@ body {
   --line-height-tight: 1.42;
   --p-spacing: 0.92rem;
   --heading-spacing: 2.25rem;
+  --hsw-heading-scroll-margin: 8px;
 
   --radius-s: var(--hsw-radius-xs);
   --radius-m: var(--hsw-radius-sm);
@@ -994,6 +995,7 @@ textarea:focus {
   font-size: var(--hsw-body-size);
   line-height: var(--line-height-normal);
   color: var(--text-normal);
+  scroll-padding-top: var(--hsw-heading-scroll-margin);
 }
 
 .markdown-preview-view .markdown-preview-sizer {
@@ -1040,11 +1042,11 @@ textarea:focus {
   word-break: normal;
   overflow-wrap: break-word;
   writing-mode: horizontal-tb;
-  scroll-margin-top: calc(var(--header-height) + 24px);
+  scroll-margin-top: var(--hsw-heading-scroll-margin);
 }
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-header {
-  scroll-margin-top: calc(var(--header-height) + 24px);
+  scroll-margin-top: var(--hsw-heading-scroll-margin);
 }
 
 .markdown-rendered h1,
