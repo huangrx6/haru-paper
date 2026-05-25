@@ -723,7 +723,28 @@ body.mod-macos .titlebar-button-container.mod-left::after {
 
 .nav-files-container {
   padding: 8px 12px 18px 24px;
-  overflow: visible;
+  height: 100%;
+  min-height: 0;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+}
+
+.workspace-split.mod-left-split .workspace-leaf-content[data-type="file-explorer"],
+.workspace-split.mod-left-split .workspace-leaf-content[data-type="file-explorer"] .view-content {
+  min-height: 0;
+}
+
+body.mod-windows .workspace-split.mod-left-split .workspace-leaf-content,
+body.mod-windows .workspace-split.mod-left-split .view-content {
+  min-height: 0;
+}
+
+body.mod-windows .workspace-split.mod-left-split .nav-files-container {
+  height: 100%;
+  min-height: 0;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
 }
 
 .tree-item-children {
@@ -892,6 +913,11 @@ body.mod-macos .titlebar-button-container.mod-left::after {
   pointer-events: auto;
 }
 
+body.mod-windows .mod-right-split .workspace-leaf-content[data-type="outline"] .tree-item-self {
+  width: 100%;
+  max-width: 100%;
+}
+
 .mod-right-split .workspace-leaf-content[data-type="outline"] .tree-item-inner {
   display: inline-flex;
   align-items: center;
@@ -902,6 +928,11 @@ body.mod-macos .titlebar-button-container.mod-left::after {
   border-radius: var(--hsw-tree-pill-radius);
   background: transparent !important;
   pointer-events: auto;
+}
+
+body.mod-windows .mod-right-split .workspace-leaf-content[data-type="outline"] .tree-item-inner,
+body.mod-windows .mod-right-split .workspace-leaf-content[data-type="outline"] .tree-item-inner * {
+  pointer-events: none !important;
 }
 
 .mod-right-split .tree-item-icon,
@@ -1377,6 +1408,50 @@ a.external-link:hover {
   flex: 1 1 auto !important;
   min-width: 0 !important;
   padding-left: 0 !important;
+}
+
+.metadata-property-value .metadata-input-date,
+.metadata-property-value .metadata-input-datetime,
+.metadata-property-value .metadata-input-time {
+  position: relative !important;
+}
+
+.metadata-property-value .metadata-input-date input,
+.metadata-property-value .metadata-input-datetime input,
+.metadata-property-value .metadata-input-time input,
+.metadata-property-value input[type="date"],
+.metadata-property-value input[type="datetime-local"],
+.metadata-property-value input[type="time"] {
+  position: relative !important;
+  box-sizing: border-box !important;
+  padding-inline-start: 30px !important;
+}
+
+.metadata-property-value .metadata-input-date .clickable-icon,
+.metadata-property-value .metadata-input-datetime .clickable-icon,
+.metadata-property-value .metadata-input-time .clickable-icon {
+  position: absolute !important;
+  left: 9px !important;
+  top: 50% !important;
+  z-index: 1 !important;
+  width: 16px !important;
+  height: 16px !important;
+  padding: 0 !important;
+  transform: translateY(-50%) !important;
+  color: var(--text-faint) !important;
+  background: transparent !important;
+  pointer-events: auto !important;
+}
+
+.metadata-property-value input[type="date"]::-webkit-calendar-picker-indicator,
+.metadata-property-value input[type="datetime-local"]::-webkit-calendar-picker-indicator,
+.metadata-property-value input[type="time"]::-webkit-calendar-picker-indicator {
+  position: absolute !important;
+  left: 9px !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 !important;
+  opacity: 0.65 !important;
 }
 
 .metadata-property-key-input,
