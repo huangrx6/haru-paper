@@ -2571,3 +2571,28 @@ body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-
   inset: auto !important;
   overflow: hidden !important;
 }
+
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-new-tab,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-new-tab,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-tab-list,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-tab-list,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-spacer,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-spacer,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-new-tab,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-new-tab,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-tab-list,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-tab-list,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-spacer,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-spacer {
+  display: none !important;
+  flex: 0 0 0 !important;
+  width: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
