@@ -2647,3 +2647,54 @@ body.mod-windows .workspace-split.mod-left-split.mod-sidedock-collapsed,
 body.mod-windows .workspace-split.mod-right-split.mod-sidedock-collapsed {
   overflow: visible !important;
 }
+
+/* Match macOS side-pane chrome: pane tabs stay near the split edge, sidebar toggles sit at the far edge. */
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-container-inner,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-container-inner,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner {
+  justify-content: flex-start !important;
+}
+
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-spacer,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-spacer,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-spacer,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-spacer {
+  display: block !important;
+  flex: 1 1 auto !important;
+  width: auto !important;
+  min-width: 8px !important;
+  max-width: none !important;
+  height: var(--header-height) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: none !important;
+}
+
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-new-tab,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-new-tab,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-new-tab,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-new-tab,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-tab-list,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-tab-list,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-tab-list,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-tab-list {
+  display: none !important;
+}
+
+body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-container .sidebar-toggle-button.mod-left,
+body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-container .sidebar-toggle-button,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .sidebar-toggle-button.mod-left,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .sidebar-toggle-button {
+  margin: 6px 0 0 auto !important;
+}
+
+body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-container .sidebar-toggle-button.mod-right,
+body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-container .sidebar-toggle-button,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .sidebar-toggle-button.mod-right,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .sidebar-toggle-button {
+  margin: 6px 0 0 auto !important;
+}
