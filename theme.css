@@ -1065,6 +1065,121 @@ body.mod-windows .workspace-tabs.mod-top-right-space > .workspace-tab-header-con
   z-index: 131 !important;
 }
 
+body.mod-windows .workspace-tabs.mod-top-right-space > .workspace-tab-header-container {
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  flex: 0 0 var(--header-height) !important;
+  width: 100% !important;
+  height: var(--header-height) !important;
+  min-height: var(--header-height) !important;
+  order: 0 !important;
+  padding: 0 8px !important;
+  position: relative !important;
+  inset: auto !important;
+  z-index: 3 !important;
+  overflow: hidden !important;
+  background: var(--hsw-chrome-bg) !important;
+  border-bottom: 0 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+body.mod-windows .workspace-tabs.mod-top-right-space > .workspace-tab-container {
+  padding-top: 0 !important;
+}
+
+body.mod-windows .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner {
+  display: flex !important;
+  align-items: center !important;
+  flex: 1 1 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+body.mod-windows .mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container {
+  padding-right: 8px !important;
+}
+
+body.mod-windows .mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header {
+  display: flex !important;
+  flex: 0 1 220px !important;
+  width: auto !important;
+  min-width: 42px !important;
+  max-width: 220px !important;
+  height: 32px !important;
+  margin: 6px 4px 0 !important;
+  padding: 0 !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  background: var(--hsw-tab-idle-bg) !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+body.mod-windows .mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header.is-active {
+  background: var(--hsw-tab-active-bg) !important;
+  border-color: color-mix(in srgb, var(--hsw-chrome-line) 190%, transparent) !important;
+  box-shadow: var(--hsw-tab-active-shadow) !important;
+}
+
+body.mod-windows .mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-inner {
+  justify-content: flex-start !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 12px !important;
+}
+
+body.mod-windows .mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-inner-title,
+body.mod-windows .mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-status-container,
+body.mod-windows .mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-inner-close-button,
+body.mod-windows .mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-new-tab,
+body.mod-windows .mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-tab-list {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.mod-windows .mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-spacer {
+  display: block !important;
+  flex: 1 1 auto !important;
+}
+
+body.mod-windows .mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-new-tab,
+body.mod-windows .mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-tab-list {
+  flex: 0 0 32px !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin: 6px 0 0 !important;
+  border-radius: var(--hsw-radius-sm) !important;
+  background: transparent !important;
+}
+
+body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-container,
+body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-container {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.mod-windows .workspace-split.mod-left-split .workspace-tab-header,
+body.mod-windows .workspace-split.mod-right-split .workspace-tab-header,
+body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-inner,
+body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-inner,
+body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-inner-icon,
+body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-inner-icon,
+body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-inner-icon .svg-icon,
+body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-inner-icon .svg-icon {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 
 .workspace-tab-header-new-tab::before,
 .workspace-tab-header-new-tab::after,
