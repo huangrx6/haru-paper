@@ -2698,3 +2698,55 @@ body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-t
 body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .sidebar-toggle-button {
   margin: 6px 0 0 auto !important;
 }
+
+/* Sidebar toggles are not part of the side tab-header DOM. Let Obsidian place them. */
+body.mod-windows .sidebar-toggle-button,
+body.mod-windows .sidebar-toggle-button.mod-left,
+body.mod-windows .sidebar-toggle-button.mod-right,
+body.mod-windows .workspace .sidebar-toggle-button,
+body.mod-windows .workspace .sidebar-toggle-button.mod-left,
+body.mod-windows .workspace .sidebar-toggle-button.mod-right {
+  position: revert !important;
+  top: revert !important;
+  right: revert !important;
+  bottom: revert !important;
+  left: revert !important;
+  inset: revert !important;
+  order: revert !important;
+  flex: revert !important;
+  width: revert !important;
+  min-width: revert !important;
+  max-width: revert !important;
+  height: revert !important;
+  min-height: revert !important;
+  max-height: revert !important;
+  margin: revert !important;
+  padding: revert !important;
+  transform: revert !important;
+  color: var(--text-muted) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+body.mod-windows .sidebar-toggle-button .svg-icon,
+body.mod-windows .sidebar-toggle-button.mod-left .svg-icon,
+body.mod-windows .sidebar-toggle-button.mod-right .svg-icon {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container {
+  pointer-events: auto !important;
+}
+
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-container-inner,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-container-inner,
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner,
+body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner {
+  justify-content: flex-start !important;
+}
