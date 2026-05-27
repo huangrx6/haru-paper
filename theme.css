@@ -586,6 +586,78 @@ body.mod-macos .titlebar-button-container.mod-left::after {
   background-color: transparent !important;
 }
 
+body.mod-windows .titlebar,
+body.mod-windows .titlebar-inner,
+body.mod-windows .titlebar-drag-region {
+  height: var(--header-height) !important;
+  min-height: var(--header-height) !important;
+}
+
+body.mod-windows .titlebar-button-container.mod-right {
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: flex-end !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  z-index: 500 !important;
+  flex: 0 0 138px !important;
+  width: 138px !important;
+  min-width: 138px !important;
+  height: var(--header-height) !important;
+  min-height: var(--header-height) !important;
+  color: var(--text-muted) !important;
+  background: var(--hsw-chrome-bg) !important;
+  background-color: var(--hsw-chrome-bg) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+body.mod-windows .titlebar-button-container.mod-right .titlebar-button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 46px !important;
+  width: 46px !important;
+  min-width: 46px !important;
+  height: var(--header-height) !important;
+  min-height: var(--header-height) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: var(--text-muted) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+body.mod-windows .titlebar-button-container.mod-right .titlebar-button:hover {
+  color: var(--text-normal) !important;
+  background: var(--background-modifier-hover) !important;
+  background-color: var(--background-modifier-hover) !important;
+}
+
+body.mod-windows .titlebar-button-container.mod-right .titlebar-button.mod-close:hover {
+  color: #ffffff !important;
+  background: #c42b1c !important;
+  background-color: #c42b1c !important;
+}
+
+body.mod-windows .mod-root .workspace-tab-header-container {
+  padding-right: 138px !important;
+}
+
+body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-container,
+body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-container {
+  padding-right: 0 !important;
+}
+
+body.mod-windows .workspace-tabs.mod-top-right-space > .workspace-tab-header-container {
+  right: 146px !important;
+}
+
 .mod-macos.is-hidden-frameless:not(.is-fullscreen) .titlebar,
 .mod-macos.is-hidden-frameless:not(.is-fullscreen) .titlebar-button-container,
 .mod-macos.is-hidden-frameless:not(.is-fullscreen) .workspace-tab-header-container,
