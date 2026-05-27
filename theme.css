@@ -2224,6 +2224,13 @@ button.mod-cta:hover {
   background: color-mix(in srgb, var(--hsw-accent-soft) 62%, transparent) !important;
 }
 
+/* Windows chrome normalization */
+body.mod-windows {
+  --hsw-win-titlebar-buttons-width: 132px;
+  --hsw-win-left-sidebar-toggle-x: 426px;
+  --hsw-win-right-sidebar-toggle-right: 142px;
+}
+
 body.mod-windows .workspace-split.mod-root .workspace-tabs {
   display: flex !important;
   flex-direction: column !important;
@@ -2231,7 +2238,8 @@ body.mod-windows .workspace-split.mod-root .workspace-tabs {
   overflow: hidden !important;
 }
 
-body.mod-windows .workspace-split.mod-root .workspace-tab-header-container {
+body.mod-windows .workspace-split.mod-root .workspace-tab-header-container,
+body.mod-windows .workspace-split.mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container {
   display: flex !important;
   align-items: center !important;
   box-sizing: border-box !important;
@@ -2239,9 +2247,8 @@ body.mod-windows .workspace-split.mod-root .workspace-tab-header-container {
   width: 100% !important;
   height: var(--header-height) !important;
   min-height: var(--header-height) !important;
-  max-height: var(--header-height) !important;
   order: 0 !important;
-  padding: 0 138px 0 8px !important;
+  padding: 0 calc(var(--hsw-win-titlebar-buttons-width) + 12px) 0 8px !important;
   position: relative !important;
   inset: auto !important;
   z-index: 80 !important;
@@ -2337,7 +2344,9 @@ body.mod-windows .workspace-split.mod-root .workspace-tab-header-inner-close-but
 }
 
 body.mod-windows .workspace-split.mod-root .workspace-tab-header-new-tab,
-body.mod-windows .workspace-split.mod-root .workspace-tab-header-tab-list {
+body.mod-windows .workspace-split.mod-root .workspace-tab-header-tab-list,
+body.mod-windows .workspace-split.mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-new-tab,
+body.mod-windows .workspace-split.mod-root .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-tab-list {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -2345,7 +2354,7 @@ body.mod-windows .workspace-split.mod-root .workspace-tab-header-tab-list {
   width: 32px !important;
   min-width: 32px !important;
   height: 32px !important;
-  margin: 6px 0 0 !important;
+  margin: 6px 4px 0 0 !important;
   border-radius: var(--hsw-radius-sm) !important;
   background: transparent !important;
   opacity: 1 !important;
@@ -2358,53 +2367,6 @@ body.mod-windows .workspace-split.mod-root .workspace-tab-header-spacer {
   flex: 1 1 auto !important;
 }
 
-body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-container,
-body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-container {
-  display: flex !important;
-  align-items: center !important;
-  position: relative !important;
-  inset: auto !important;
-  width: 100% !important;
-  height: var(--header-height) !important;
-  min-height: var(--header-height) !important;
-  padding: 0 8px !important;
-  overflow: visible !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
-
-body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-container-inner,
-body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-container-inner {
-  display: flex !important;
-  align-items: center !important;
-  flex: 1 1 auto !important;
-  min-width: 0 !important;
-  overflow: visible !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-body.mod-windows .workspace-split.mod-left-split .workspace-tab-header,
-body.mod-windows .workspace-split.mod-right-split .workspace-tab-header,
-body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-inner,
-body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-inner,
-body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-inner-icon,
-body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-inner-icon,
-body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-inner-icon .svg-icon,
-body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-inner-icon .svg-icon,
-body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-new-tab,
-body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-new-tab,
-body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-tab-list,
-body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-tab-list {
-  display: flex !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
-
-/* Windows keeps side pane tab bars in the same top strip as the root tabs.
-   Restore them as compact icon tabs so the left/right pane buttons do not vanish. */
 body.mod-windows .workspace-split.mod-left-split .workspace-tabs,
 body.mod-windows .workspace-split.mod-right-split .workspace-tabs {
   display: flex !important;
@@ -2421,10 +2383,6 @@ body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-
   align-items: center !important;
   box-sizing: border-box !important;
   position: relative !important;
-  top: auto !important;
-  right: auto !important;
-  bottom: auto !important;
-  left: auto !important;
   inset: auto !important;
   order: 0 !important;
   flex: 0 0 var(--header-height) !important;
@@ -2432,7 +2390,6 @@ body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-
   max-width: none !important;
   height: var(--header-height) !important;
   min-height: var(--header-height) !important;
-  max-height: var(--header-height) !important;
   margin: 0 !important;
   padding: 0 8px !important;
   overflow: visible !important;
@@ -2441,20 +2398,16 @@ body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-
   border-bottom: 0 !important;
   opacity: 1 !important;
   visibility: visible !important;
-  pointer-events: none !important;
+  pointer-events: auto !important;
 }
 
 body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-container-inner,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-container-inner,
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner {
+body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
   flex: 1 1 auto !important;
-  width: auto !important;
   min-width: 0 !important;
-  max-width: none !important;
   height: var(--header-height) !important;
   gap: 4px !important;
   overflow: visible !important;
@@ -2465,7 +2418,17 @@ body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-
 
 body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-container-inner,
 body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner {
+  display: flex !important;
+  align-items: center !important;
   justify-content: flex-end !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  height: var(--header-height) !important;
+  gap: 4px !important;
+  overflow: visible !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header,
@@ -2585,16 +2548,6 @@ body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-
 body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-spacer,
 body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-spacer {
   display: none !important;
-  flex: 0 0 0 !important;
-  width: 0 !important;
-  min-width: 0 !important;
-  max-width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
 }
 
 body.mod-windows .sidebar-toggle-button,
@@ -2606,21 +2559,37 @@ body.mod-windows .workspace .sidebar-toggle-button.mod-right {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  position: relative !important;
-  z-index: 260 !important;
-  flex: 0 0 32px !important;
+  position: fixed !important;
+  top: 6px !important;
+  z-index: 1000 !important;
   width: 32px !important;
   min-width: 32px !important;
+  max-width: 32px !important;
   height: 32px !important;
   min-height: 32px !important;
-  margin: 6px 6px 0 !important;
+  max-height: 32px !important;
+  margin: 0 !important;
   padding: 0 !important;
   color: var(--text-muted) !important;
   background: transparent !important;
+  border: 0 !important;
   border-radius: 10px !important;
   opacity: 1 !important;
   visibility: visible !important;
   pointer-events: auto !important;
+  transform: none !important;
+}
+
+body.mod-windows .sidebar-toggle-button.mod-left,
+body.mod-windows .workspace .sidebar-toggle-button.mod-left {
+  left: var(--hsw-win-left-sidebar-toggle-x) !important;
+  right: auto !important;
+}
+
+body.mod-windows .sidebar-toggle-button.mod-right,
+body.mod-windows .workspace .sidebar-toggle-button.mod-right {
+  left: auto !important;
+  right: var(--hsw-win-right-sidebar-toggle-right) !important;
 }
 
 body.mod-windows .sidebar-toggle-button:hover,
@@ -2646,107 +2615,4 @@ body.mod-windows .workspace-split.mod-right-split.is-sidedock-collapsed,
 body.mod-windows .workspace-split.mod-left-split.mod-sidedock-collapsed,
 body.mod-windows .workspace-split.mod-right-split.mod-sidedock-collapsed {
   overflow: visible !important;
-}
-
-/* Match macOS side-pane chrome: pane tabs stay near the split edge, sidebar toggles sit at the far edge. */
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-container-inner,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-container-inner,
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner {
-  justify-content: flex-start !important;
-}
-
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-spacer,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-spacer,
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-spacer,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-spacer {
-  display: block !important;
-  flex: 1 1 auto !important;
-  width: auto !important;
-  min-width: 8px !important;
-  max-width: none !important;
-  height: var(--header-height) !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: none !important;
-}
-
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-new-tab,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-new-tab,
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-new-tab,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-new-tab,
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-tab-list,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-tab-list,
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-tab-list,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-tab-list {
-  display: none !important;
-}
-
-body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-container .sidebar-toggle-button.mod-left,
-body.mod-windows .workspace-split.mod-left-split .workspace-tab-header-container .sidebar-toggle-button,
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .sidebar-toggle-button.mod-left,
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .sidebar-toggle-button {
-  margin: 6px 0 0 auto !important;
-}
-
-body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-container .sidebar-toggle-button.mod-right,
-body.mod-windows .workspace-split.mod-right-split .workspace-tab-header-container .sidebar-toggle-button,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .sidebar-toggle-button.mod-right,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .sidebar-toggle-button {
-  margin: 6px 0 0 auto !important;
-}
-
-/* Sidebar toggles are not part of the side tab-header DOM. Let Obsidian place them. */
-body.mod-windows .sidebar-toggle-button,
-body.mod-windows .sidebar-toggle-button.mod-left,
-body.mod-windows .sidebar-toggle-button.mod-right,
-body.mod-windows .workspace .sidebar-toggle-button,
-body.mod-windows .workspace .sidebar-toggle-button.mod-left,
-body.mod-windows .workspace .sidebar-toggle-button.mod-right {
-  position: revert !important;
-  top: revert !important;
-  right: revert !important;
-  bottom: revert !important;
-  left: revert !important;
-  inset: revert !important;
-  order: revert !important;
-  flex: revert !important;
-  width: revert !important;
-  min-width: revert !important;
-  max-width: revert !important;
-  height: revert !important;
-  min-height: revert !important;
-  max-height: revert !important;
-  margin: revert !important;
-  padding: revert !important;
-  transform: revert !important;
-  color: var(--text-muted) !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
-
-body.mod-windows .sidebar-toggle-button .svg-icon,
-body.mod-windows .sidebar-toggle-button.mod-left .svg-icon,
-body.mod-windows .sidebar-toggle-button.mod-right .svg-icon {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container,
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container {
-  pointer-events: auto !important;
-}
-
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-container-inner,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs > .workspace-tab-header-container .workspace-tab-header-container-inner,
-body.mod-windows .workspace-split.mod-left-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner,
-body.mod-windows .workspace-split.mod-right-split .workspace-tabs.mod-top-right-space > .workspace-tab-header-container .workspace-tab-header-container-inner {
-  justify-content: flex-start !important;
 }
